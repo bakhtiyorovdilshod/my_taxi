@@ -1,0 +1,77 @@
+Order Management System
+
+1 => Customers Related URLs
+
+A)
+URL : 127.0.0.1:8000/order/customer/create/,
+Content: Customers can give order for a taxi
+Method: POST
+Format: JSON
+Style: {
+	"first_name":"Dilnura",
+	"last_name":"Umarova",
+	"phone_number":"+998912222228"
+
+}
+
+B)
+URL :127.0.0.1:8000/order/customer/see/order/status/?q=998998323249,
+Content: Customers can see their order status (During N secunds may be) filter their phone number
+Method: GET
+Format:JSON
+-------------------------------------------------------------------------------------------------------
+2 = > Drivers related URLs
+
+A)
+URL : 127.0.0.1:8000/driver/orders/list/,
+Content: Returns the list of all orders (from customers)
+Method: GET
+Format:JSON
+
+B)
+URL : 127.0.0.1:8000/driver/update/<int:pk>/order/status/,
+Content: Drivers can update their orders which have taken from customers in order to update order status
+Method: PUT
+Format:JSON
+Style: {
+	"order_status":2 (2 is id of OrderStatus )
+}
+
+C) 
+URL : 127.0.0.1:8000/order/accept/,
+Content: Drivers can take orders from customers
+Method: POST
+Format:JSON
+Style: {
+	"customer_phone":3,(id of customer phone)
+	"first_name":"Dilshod",
+	"last_name":"Bakhtiyorov",
+	"phone_number":"+998998323125",
+	"car_number":"01K657YU",
+	"order_status":1 (id of order status)
+}
+
+D)
+URL :127.0.0.1:8000/driver/filter/accepted/orders/?q=30K878PL,
+Content: We can filter by driver car number in order to know how many orders have and also their order status
+Method: GET
+Format:JSON
+
+
+
+--------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

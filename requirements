@@ -1,0 +1,4 @@
+In order to get this project up and running, install the following:
+rest_framework
+This project is created by python 3 if you use Linux, you can run python3 manage.py runserver
+else python manage.py runserver
