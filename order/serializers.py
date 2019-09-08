@@ -16,7 +16,7 @@ class AcceptOrderCreateSerializer(ModelSerializer):
         fields = "__all__"
 
     def validate(self, data):
-        customer_id = data['customer_phone']
+        customer_id = data['customer_phone'] #only one driver take one order
         customer_qs = AcceptOrder.objects.filter(customer_phone=customer_id)
         if customer_qs.exists():
             raise ValidationError("This order has already taken")
